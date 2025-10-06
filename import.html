@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Импорт файла</h1>
+    <div class="form-container">
+      {% if message %}
+        <div class="message message-{{ message_type }}">
+          {{ message }}
+        </div>
+      {% endif %}
+      <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <label class="form-label" for="file">Выберите файл для загрузки:</label>
+          <input type="file"
+                 id="file"
+                 name="file"
+                 class="form-input file-input"
+                 accept=".txt"
+                 required>
+          <div class="file-info">
+            Разрешены только файлы в формате .txt
+          </div>    </div>
+        <button type="submit" class="btn-submit">
+          Загрузить файл       </button>      </form>    </div>
+  </div>
+</body>
+</html>
